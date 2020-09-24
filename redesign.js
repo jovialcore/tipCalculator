@@ -27,7 +27,7 @@ document.querySelector('#check').onclick = function() {
  
  var resultBillTip = document.querySelector("#totalBillWithTip");
  //we print the value of the tip and toatal bill then roudning any number greater than two
- resultTipamount.innerHTML = theVlaueOftip + "%";
+ resultTipamount.innerHTML = theVlaueOftip.toFixed(2) + "%";
  resultBillTip.innerHTML = tipFinal;
      
     } 
