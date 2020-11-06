@@ -5,14 +5,20 @@ document.querySelector('#check').onclick = function() {
     // var theTip = document.getElementById('enterTip').value;
         
         var tipOwn = document.getElementById('enterTip').value;
+
    //print the range percentage on one side of the div, expecially on the right
  //caclutaing the percentage output
- tipOwn 
  regex = RegExp('^[1-9][0-9]?$|^100$');
  if (regex.test(tipOwn)== false) {
      document.getElementById('er').innerHTML = "Numbers from 0-100 are allowed.Try again";
   
  }  else if (regex.test(tipOwn) == true) {
+
+    document.querySelector("#enterTip").addEventlistener("oninput", function () {
+        document.getElementById('enterTip').value = "%";
+
+    });    
+
     document.getElementById('er').innerHTML = "";
     var theVlaueOftip = paidBill * (tipOwn/100);
     console.log(theVlaueOftip);
@@ -27,8 +33,8 @@ document.querySelector('#check').onclick = function() {
  
  var resultBillTip = document.querySelector("#totalBillWithTip");
  //we print the value of the tip and toatal bill then roudning any number greater than two
- resultTipamount.innerHTML = theVlaueOftip.toFixed(2) + "%";
- resultBillTip.innerHTML = tipFinal;
+ resultTipamount.innerHTML = "N" + theVlaueOftip.toFixed(2) ;
+ resultBillTip.innerHTML = "N" + tipFinal +".00";
      
     } 
 
