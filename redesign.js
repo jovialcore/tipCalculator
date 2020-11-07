@@ -15,7 +15,7 @@ document.querySelector('#check').onclick = function() {
  }  else if (regex.test(tipOwn) == true) {
 
     document.querySelector("#enterTip").addEventlistener("oninput", function () {
-        document.getElementById('enterTip').value = "%";
+        document.getElementById('enterTip').value = "";
 
     });    
 
